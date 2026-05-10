@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Fredoka:wght@500;600;700&family=Quicksand:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 340 60% 98%;
+    --foreground: 340 30% 35%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 340 30% 35%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 340 30% 35%;
+
+    --primary: 340 70% 80%;
+    --primary-foreground: 340 50% 25%;
+
+    --secondary: 280 55% 93%;
+    --secondary-foreground: 280 35% 35%;
+
+    --muted: 200 50% 95%;
+    --muted-foreground: 340 20% 55%;
+
+    --accent: 180 50% 85%;
+    --accent-foreground: 200 40% 30%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 340 50% 92%;
+    --input: 340 50% 94%;
+    --ring: 340 70% 80%;
+
+    --radius: 1.25rem;
+
+    /* Custom pastel tokens */
+    --cream: 40 80% 97%;
+    --pink-soft: 340 100% 95%;
+    --pink-deep: 335 60% 75%;
+    --peach: 18 90% 88%;
+    --lilac: 280 70% 90%;
+    --mint: 150 50% 88%;
+    --sky: 200 70% 90%;
+    --butter: 50 90% 90%;
+
+    --gradient-sky: linear-gradient(180deg, hsl(340 100% 97%) 0%, hsl(280 60% 96%) 50%, hsl(200 70% 96%) 100%);
+    --gradient-pink: linear-gradient(135deg, hsl(340 80% 82%), hsl(280 60% 82%));
+    --gradient-peach: linear-gradient(135deg, hsl(28 90% 88%), hsl(340 80% 88%));
+
+    --shadow-sticker: 0 8px 24px -6px hsl(340 50% 70% / 0.3), 0 0 0 4px hsl(0 0% 100%);
+    --shadow-soft: 0 12px 30px -10px hsl(340 60% 75% / 0.4);
+    --shadow-tape: 0 2px 6px hsl(340 30% 50% / 0.15);
+
+    --sidebar-background: 350 100% 97%;
+    --sidebar-foreground: 340 40% 25%;
+    --sidebar-primary: 340 82% 65%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 340 60% 92%;
+    --sidebar-accent-foreground: 340 50% 30%;
+    --sidebar-border: 340 60% 88%;
+    --sidebar-ring: 340 82% 65%;
+  }
+
+  .dark {
+    --background: 320 25% 10%;
+    --foreground: 340 40% 92%;
+
+    --card: 320 22% 15%;
+    --card-foreground: 340 40% 92%;
+
+    --popover: 320 22% 15%;
+    --popover-foreground: 340 40% 92%;
+
+    --primary: 340 75% 72%;
+    --primary-foreground: 340 30% 12%;
+
+    --secondary: 280 25% 22%;
+    --secondary-foreground: 280 60% 92%;
+
+    --muted: 320 18% 20%;
+    --muted-foreground: 340 25% 75%;
+
+    --accent: 180 35% 30%;
+    --accent-foreground: 180 60% 92%;
+
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 320 20% 24%;
+    --input: 320 20% 22%;
+    --ring: 340 75% 72%;
+
+    --pink-soft: 340 40% 25%;
+    --pink-deep: 335 60% 65%;
+
+    --gradient-sky: linear-gradient(180deg, hsl(320 30% 12%) 0%, hsl(280 30% 14%) 50%, hsl(200 35% 14%) 100%);
+    --gradient-pink: linear-gradient(135deg, hsl(340 80% 75%), hsl(280 60% 75%));
+    --gradient-peach: linear-gradient(135deg, hsl(28 50% 30%), hsl(340 50% 30%));
+
+    --shadow-sticker: 0 8px 24px -6px hsl(340 60% 10% / 0.6), 0 0 0 4px hsl(320 22% 18%);
+    --shadow-soft: 0 12px 30px -10px hsl(340 60% 20% / 0.6);
+    --shadow-tape: 0 2px 6px hsl(0 0% 0% / 0.4);
+
+    --sidebar-background: 320 25% 12%;
+    --sidebar-foreground: 340 40% 90%;
+    --sidebar-accent: 320 22% 20%;
+    --sidebar-accent-foreground: 340 40% 92%;
+    --sidebar-border: 320 20% 24%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Quicksand', sans-serif;
+    background-image:
+      radial-gradient(circle at 10% 0%, hsl(340 100% 94% / 0.7), transparent 40%),
+      radial-gradient(circle at 90% 15%, hsl(50 90% 92% / 0.6), transparent 40%),
+      radial-gradient(circle at 80% 60%, hsl(180 60% 92% / 0.5), transparent 40%),
+      radial-gradient(circle at 20% 80%, hsl(280 70% 93% / 0.6), transparent 40%),
+      radial-gradient(circle at 60% 100%, hsl(150 60% 92% / 0.4), transparent 40%);
+    background-attachment: fixed;
+  }
+
+  .dark body {
+    background-image:
+      radial-gradient(circle at 10% 0%, hsl(340 50% 18% / 0.8), transparent 40%),
+      radial-gradient(circle at 90% 15%, hsl(50 30% 14% / 0.6), transparent 40%),
+      radial-gradient(circle at 80% 60%, hsl(180 40% 16% / 0.6), transparent 40%),
+      radial-gradient(circle at 20% 80%, hsl(280 40% 18% / 0.7), transparent 40%),
+      radial-gradient(circle at 60% 100%, hsl(150 30% 14% / 0.5), transparent 40%);
+  }
+
+  h1, h2, h3 {
+    font-family: 'Fredoka', sans-serif;
+  }
+}
+
+@layer components {
+  .font-handwritten {
+    font-family: 'Caveat', cursive;
+  }
+  .font-display {
+    font-family: 'Fredoka', sans-serif;
+  }
+  .font-mono-cute {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .sticker {
+    @apply bg-card rounded-3xl;
+    box-shadow: var(--shadow-sticker);
+    border: 3px solid hsl(var(--card));
+  }
+
+  .tape {
+    position: relative;
+  }
+  .tape::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-3deg);
+    width: 70px;
+    height: 22px;
+    background: hsl(28 95% 80% / 0.6);
+    border-radius: 2px;
+    box-shadow: var(--shadow-tape);
+    z-index: 2;
+  }
+
+  .wobble {
+    transition: transform 0.3s ease;
+  }
+  .wobble:hover {
+    transform: rotate(-2deg) scale(1.03);
+  }
+
+  .text-gradient-pink {
+    background: var(--gradient-pink);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .dotted-bg {
+    background-image: radial-gradient(hsl(340 60% 80% / 0.4) 1.5px, transparent 1.5px);
+    background-size: 20px 20px;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(2deg); }
+}
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+.animate-float { animation: float 4s ease-in-out infinite; }
+.animate-wiggle { animation: wiggle 3s ease-in-out infinite; }
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
