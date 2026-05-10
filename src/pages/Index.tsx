@@ -9,7 +9,7 @@ import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/hooks/use-toast";
 
-const CONTACT_EMAIL = "example@gmail.com";
+const CONTACT_EMAIL = "dewjayasekara78@gmail.com";
 
 const sections = [
   { id: "home", label: "Home", icon: Home },
